@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="WhoWantsWhat">
+    <meta name="keyword" content="WhoWantsWhat">
+    <link rel="shortcut icon" href="img/bandit_logo_blue.png">
+
+    <title id="who-wants-what-title">Time Bandit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-reset.css" rel="stylesheet" type="text/css" />
+    <link  href="css/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+
+    <!--external css-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700" rel="stylesheet">
+	<!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <!--toastr-->
+	<link href="assets/toastr-master/toastr.css" rel="stylesheet" type="text/css" />
+	
+</head>
+
+  <body class="login-body">
+
+    <div class="container">
+
+      	<form class="form-signin" id="signin-form">
+			<div class="login-wrap">
+				<div class="row">
+
+					<!--vector bandit link https://t3.ftcdn.net/jpg/00/36/01/14/240_F_36011417_yELUJ2sUL4pTZqzCUWsjZBr94YHuQ3QE.jpg-->
+					<div class="col-sm-6">
+						<h3 style="padding-left: 50px;">Time Bandit will take your time management and stash it away<br>for safe keeping.</h3>
+						<img src="img/bandit_clock_blue.png" style="height:200px; margin-left:60px;">
+					</div>
+					<div class="col-sm-6">
+						<img src="img/bandit_logo_blue.png" style="height:10em; margin-left:155px; margin-bottom:15px;">
+						<input type="email" class="form-control" id="email" name="email" placeholder="User Email" autofocus>
+						<input type="password" style="margin-top:15px; margin-bottom: 25px;" id="password" class="form-control" name="password" placeholder="Password">
+						<div class="row">
+							<div class="col-sm-6">
+								<a href="#" id="reset-password-anchor"> Reset Password?</a>
+							</div>
+							<div class="col-sm-6">
+								<button class="btn btn-login" type="submit" id="sign-in-button" style="font-weight: 600; float: right;">Login</button>
+							</div>
+						</div>					
+					</div>
+				</div>			
+			</div>
+		</form>
+
+		<form class="form-signin" id="signup-form">
+			<div class="login-wrap">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3>Signup is free and easy. Keeping you on task with whats important to your business.</h3>
+						<img src="img/bandit_clock_blue.png" style="height:200px; margin-left:60px;">
+					</div>
+					<div class="col-sm-6">
+						<img src="img/bandit_logo_blue.png" style="height:10em; margin-left:155px; margin-bottom:15px;">
+						<input type="text" class="form-control" id="sign-up-first-name" name="sign-up-first-name" placeholder="First Name" autofocus>
+						<input type="text" style="margin-top:5px;" id="sign-up-last-name" class="form-control" name="sign-up-last-name" placeholder="Last Name">
+						<input type="email"  style="margin-top:5px;" class="form-control" id="sign-up-email" name="sign-up-email" placeholder="User Email" autofocus>
+						<input type="password" style="margin-top:15px; margin-bottom: 25px;" id="sign-up-password" class="form-control" name="sign-up-password" placeholder="Password">
+						<div class="row">
+							<div class="col-sm-12">
+								<button class="btn btn-login" type="submit" id="sign-up-button" style="font-weight: 600; float: right;">Sign Up</button>
+							</div>
+						</div>					
+					</div>
+				</div>			
+			</div>
+		</form>
+
+		<form class="form-signin" id="reset-password-form" style="display: none;">
+			<div class="login-wrap">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3 style="padding-left: 50px;">Time Bandit will take your time management and stash it away<br>for safe keeping.</h3>
+						<img src="img/bandit_clock_blue.png" style="height:200px; margin-left: 60px;">
+					</div>
+					<div class="col-sm-6">
+						<img src="img/bandit_logo_blue.png" style="height:10em; margin-left:155px; margin-bottom:15px;">
+						<p id="enter-email-text" style="text-align: left; color: #696969;">Enter your email address below to reset your password.</p>
+						<input type="text" name="reset_email" id="reset_email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">			
+						<button class="btn btn-success" style="float: right;" type="button" name="request_reset_button" id="request_reset_button">Request Reset</button>
+						<button data-dismiss="modal" style="float: right; margin-right: 5px; margin-bottom: 0px !important;" class="btn btn-danger" type="button" id="cancel-button">Cancel</button>						
+					</div>
+				</div>			
+			</div>
+		</form>
+	  
+	<div class="login-controls">
+		<button class="btn btn-signup"  id="sign-up-switch-button" style="font-weight: 600;">Sign Up For Free</button>
+		<button class="btn btn-signup"  id="log-in-switch-button" style="font-weight: 600; display: none;">Login to Existing Account</button>
+	</div>
+
+    </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--toastr-->
+    <script src="assets/toastr-master/toastr.js"></script>
+
+	<!--In-house scripts-->
+    <script src="js/jwt-decode.min.js"></script>
+	<script src="js/every-page.js"></script>
+	<!--script src="js/js.cookie.js"></script-->
+	<!--In-house scripts end-->
+
+    <!--bootstrap-switch-->
+    <script src="assets/bootstrap-switch/static/js/bootstrap-switch.js"></script>
+
+  </body>
+    
+  <script type="text/javascript">
+
+	toastr.options = {
+		"closeButton": true,
+		"debug": false,
+		"progressBar": false,
+		"positionClass": "toast-top-full-width",
+		"onclick": null,
+		"showDuration": "2000",
+		"hideDuration": "1000",
+		"timeOut": "6000",
+		"extendedTimeOut": "0",
+		"showEasing": "swing",
+		"hideEasing": "linear",
+		"showMethod": "fadeIn",
+		"hideMethod": "fadeOut",
+		"opacity"	: ".7"
+	};
+
+	$( document ).ready(function() {
+
+		var today = new Date();
+  		var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+		var expired = new Date(today.getTime() - 24 * 3600 * 1000); // less 24 hours
+
+		if (getCookie("email") != "" && getCookie("email") != null){
+			$('input[name="email"]').val(getCookie("email"));
+			$("#remember-me-checkbox").prop("checked", true);
+			$("#remember-me-checkbox").prop("disabled", false);
+		} else {
+			$('input[name="email"]').val("");
+			$("#remember-me-checkbox").prop("checked", false);
+			$("#remember-me-checkbox").prop("disabled", true);
+		}
+
+		/*if(getCookie("password") != "" && getCookie("password") != null){
+			$("input[name=\"password\"]").val(getCookie("password"));
+			$("#remember-me-checkbox").is(':checked');
+			$("#remember-me-checkbox").prop("disabled", false);
+		} else {
+			$("input[name=\"password\"]").val("");
+			$("#remember-me-checkbox").prop('checked', false);
+			$("#remember-me-checkbox").prop("disabled", true);
+		}*/
+
+		if ($('input[name="email"]').val().length == 0) {
+			$("#remember-me-checkbox").prop("disabled", true);
+		} else {
+			$("#remember-me-checkbox").removeAttr("disabled");
+		}
+
+		$("#remember-me-checkbox").on("click", function(){
+			if($("#remember-me-checkbox").is(":checked")){
+				storeValues();
+				$("#remember-validation-modal").modal("hide");
+				toastr.success("Your User Email will be stored for 30 days. For security purposes, your password will not be stored.").attr("style", "width: 50% !important");
+			}else{
+				deleteCookie("email");
+				//deleteCookie("password");
+			}
+		});
+
+		$("#sign-in-button").hover(function() {
+    		$(this).css("background-color", "#c6c6c6");
+		}, function() {
+    		$(this).css("background-color", "#bababa");
+		});
+
+		/*view and form switching code*/
+		$("#sign-up-switch-button").on("click", function() {
+			$("#sign-up-switch-button, #signin-form").hide();
+			$("#log-in-switch-button, #signup-form").show();
+			$("#sign-up-first-name").focus();
+		});
+
+		$("#log-in-switch-button").on("click", function() {
+			$("#log-in-switch-button, #signup-form").hide();
+			$("#sign-up-switch-button, #signin-form").show();
+			$("#email").focus();			
+		});
+
+		$("#reset-password-anchor").on("click", function() {
+			$("#signin-form, #sign-up-switch-button").hide();
+			$("#reset-password-form").show();
+			$("#reset_email").focus();
+		});
+
+		$("#cancel-button").on("click", function() {
+			$("#reset-password-form").hide();
+			$("#signin-form, #sign-up-switch-button").show();	
+			$("#email").focus();		
+		});
+		/*end switching code*/
+
+		$('input[name="email"]').keyup(function(){
+			$("#remember-me-checkbox").removeAttr("disabled");
+		});
+
+		$("#no-remember-confirmation").on("click", function(){
+			$("#remember-me-checkbox").prop('checked', false);
+			$("#remember-validation-modal").modal("hide");
+		});
+
+		function setCookie(name, value){
+			document.cookie = name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+		}
+
+		function getCookie(name){
+			var re = new RegExp(name + "=([^;]+)");
+			var value = re.exec(document.cookie);
+			return (value != null) ? unescape(value[1]) : null;
+		}
+		
+		function storeValues() {
+			setCookie("email", $('input[name="email"]').val());
+			//setCookie("password", $('input[name="password"]').val());
+			return true;
+		}
+
+		function deleteCookie(name) {
+			document.cookie=name + "=null; path=/; expires=" + expired.toGMTString();
+		}
+
+			
+		var cookieDetection = navigator.cookieEnabled;
+		console.log(cookieDetection);
+
+		if(localStorageTest() === true) {
+
+			// available
+			// Nuke storage
+			localStorage.clear();
+
+			/* Handle login
+			$("form").submit(function() { 
+				event.preventDefault();
+				attemptLogin("Provider");             
+			});  // End Form Submit
+			
+			// Trap request_reset button
+			$('#request_reset_button').click(function(event) {
+				event.preventDefault(); 
+				requestReset("Provider");
+			});*/
+
+			/* Attempt login
+			function attemptLogin(asRole) {
+				var val = $("input[type=submit][clicked=true]").val();
+				var password = $('input[name="password"]').val();
+				var email = $('input[name="email"]').val();
+				var url = apiPathUnprotected + (asRole == "Provider" ? "user_login" : "customer_login");
+
+				$.ajax({
+					url: url,
+					type: "POST",
+					headers: {
+						"Content-Type": "application/json; charset=utf-8"
+					},
+					contentType: "application/json",
+					data: JSON.stringify({
+						"email": email,
+						"password": password
+					}) //End Data
+				}) //End Ajax
+					.done(function(data, textStatus, jqXHR) {
+						saveUser(data.data);
+						var decoded = jwt_decode(data.data.token);
+						window.location.href = decoded.role === "Provider" ? "index.html" : "index-cust.html";
+				})  //End Done
+					.fail(function(jqXHR, textStatus, errorThrown) {
+						if(asRole == "Provider") {
+							attemptLogin("Customer");
+						} else{
+							toastr.error("Check username and password.", "Invalid Login");
+							$('input[name="password"]').val("");
+						}
+
+				})  //End Fail
+					.always(function() {
+					/ ... /
+				});  //End Always
+			}*/
+			
+			/* Reset password
+			function requestReset(asRole) {
+				var email = $('input[name="reset_email"]').val();
+				var url = apiPathUnprotected + (asRole == "Provider" ? "user_request_reset/" + email : "customer_request_reset/" + email);
+				$("#myModal").modal("hide");
+				$.ajax({
+					url: url,
+					type: "GET",
+					headers: {
+						"Content-Type": "application/json; charset=utf-8"
+					}
+				}) //End Ajax
+					.done(function(data, textStatus, jqXHR) {
+						toastr.success("Check your email for a link to reset your password.", "Email Sent");
+						//window.location.href = decoded.role === "Provider" ? "index.html" : "index-cust.html";
+				})  //End Done
+					.fail(function(jqXHR, textStatus, errorThrown) {
+						if(asRole == "Provider") {
+							requestReset("Customer");
+						} else{
+							// Even on fail through 2nd pass, just show dialog. 
+							toastr.success("Check your email for a link to reset your password.", "Email Sent");
+						}
+				})  //End Fail
+					.always(function() {
+					/ ... /
+				});  //End Always
+			}*/
+			// End Reset request
+
+		} else {
+			toastr.error("Your browser does not support local storage which is required for this site to function. Are you in private browsing mode?", "No local storage");
+		}
+
+	}); //End document ready
+       
+</script> 
+
+</html>
