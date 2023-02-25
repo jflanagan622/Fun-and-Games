@@ -42,10 +42,10 @@ app.listen(app.get('port'), function(){
 app.get('/', function(req,res) {
 	res.render('home');
 });
-//app.get('/pretty', function(req,res) {
+app.get('/homepretty', function(req,res) {
 	// Send the construction page
-	//res.render('homepretty');
-//});
+	res.render('homepretty');
+});
 
 // Construction
 app.get('/construction', function(req,res) {

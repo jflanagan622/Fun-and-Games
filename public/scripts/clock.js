@@ -42,7 +42,7 @@ function initializeClock(id, endtime) {
 // the page is loaded and ready to go
 jQuery(document).ready(
     function() {
-        var deadline = 'July 7 2017';
+        var deadline = 'September 17 2023';
         initializeClock('clockdiv', deadline);
     } // End function
 ); // End jQuery.ready
