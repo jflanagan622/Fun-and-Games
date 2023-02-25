@@ -1,8 +1,9 @@
 // Ridgeline Technologies
 // Basic Node+Express server for
 // our test company
-var express = require('express');
-var app = express();
+const express = require('express');
+const { engine } = require ('express-handlebars');
+const app = express();
 
 // Set the port to listen on. 80 since it's the web server
 // NOTE: su usually required for ports under 1024
@@ -19,9 +20,9 @@ app.use(morgan(':date :remote-addr :method :url :status :response-time ms - :res
 //var handlebars = require('express-handlebars');
 // Point to a default template
 //app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-
+app.engine('handlebars', engine({defaultLayout: 'main'}));
 // Add handlebars to the app
-//app.set('view engine', 'handlebars');
+app.set('view engine', 'handlebars');
 
 // Kill cache 304 response
 app.disable('etag');

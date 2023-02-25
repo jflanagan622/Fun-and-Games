@@ -34,8 +34,8 @@ app.use(cors());
 // =============================================================================
 var config = {
   user: 'appuser', 				          // env var: PGUSER
-  database: 'richwood-scentific', 	// env var: PGDATABASE
-  password: 'appuserpass1', 			  // env var: PGPASSWORD
+  database: 'Seeker Business Tour', 	// env var: PGDATABASE
+  password: 'Seeker2023!', 			  // env var: PGPASSWORD
   host: 'localhost', 				        // Server hosting the postgres database
   port: 5432, 						          // env var: PGPORT ** CHECK YOUR PORT
   max: 10, 							            // max number of clients in the pool
