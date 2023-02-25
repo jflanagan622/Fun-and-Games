@@ -16,12 +16,12 @@ var morgan = require('morgan');
 app.use(morgan(':date :remote-addr :method :url :status :response-time ms - :res[content-length]'));
 
 // Add / Setup handlebars view engine
-var handlebars = require('express-handlebars');
+//var handlebars = require('express-handlebars');
 // Point to a default template
-app.engine('handlebars', handlebars({defaultLayout: 'main'}));
+//app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 
 // Add handlebars to the app
-app.set('view engine', 'handlebars');
+//app.set('view engine', 'handlebars');
 
 // Kill cache 304 response
 app.disable('etag');
