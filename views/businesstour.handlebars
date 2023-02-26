@@ -1,0 +1,436 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/sweetalert.min.js"></script> 
+  <script src="../assets/js/tether.min.js"></script>
+  <script src="../assets/js/chart.js"></script>
+  <script src="../assets/js/tablesorter.min.js"></script>
+  <script src="../assets/js/toolkit.js"></script>
+  <script src="../assets/js/application.js"></script>
+  <script src="../assets/js/typeahead.bundle.js"></script>
+
+<div class="container">
+    <div class="row">
+
+      <div class="col-md-3 sidebar">
+        <nav class="sidebar-nav">
+
+          <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+              <span class="sr-only">Toggle nav</span>
+            </button>
+           <a class="sidebar-brand img-responsive" href="/admin">
+              <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+          </div>
+
+          <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+           
+           <!-- Search for products -->
+           <form class="sidebar-form">
+              <input class="form-control" type="text" placeholder="Search...">
+              <button type="submit" class="btn-link">
+                <span class="icon icon-magnifying-glass"></span>
+              </button>
+            </form>
+
+            <!-- Side Nav Bar Top -->
+            <ul class="nav nav-pills nav-stacked flex-column">
+              <li class="nav-header"><h5 style="text-decoration: underline;">Pages</h5></li>
+               
+              <li class="nav-item">
+                <a class="nav-link active"href="seeker-bt">Business Tour</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link "href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/">Active Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/">Manage Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/">Manage Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/">Create a Game</a>
+              </li>
+            </ul>
+            
+            <hr class="visible-xs mt-3">
+
+            <!-- Side Nav Bar Bottom -->
+            <ul class="nav nav-pills nav-stacked flex-column">
+              <li class="nav-header">Related Pages</li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="/">Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="/">Upgrade</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </nav>
+      </div>
+
+        <!-- Top page Bar -->
+        <div class="col-md-9 content">
+            <div class="dashhead">
+                <div class="dashhead-titles">
+                    <h6 class="dashhead-subtitle">Seeker Games</h6>
+                    <h2 class="dashhead-title">Business Tour</h2>
+                </div>
+            </div>
+            <!-- Body Box -->
+            <div class="row text-center mt-5">
+              <div class="col-md-4 mb-4 mb-md-3">
+                <div class="w-3 mx-auto">
+                  <canvas
+                    class="ex-graph"
+                    width="200" height="200"
+                    data-chart="doughnut"
+                    data-dataset="[230, 130]"
+                    data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                    data-labels="['Returning', 'New']">
+                  </canvas>
+                </div>
+                <strong class="text-muted">Traffic</strong>
+                <h4>New vs Returning</h4>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-3">
+                <div class="w-3 mx-auto">
+                  <canvas
+                    class="ex-graph"
+                    width="200" height="200"
+                    data-chart="doughnut"
+                    data-dataset="[330,30]"
+                    data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                    data-labels="['Returning', 'New']">
+                  </canvas>
+                </div>
+                <strong class="text-muted">Game Participants</strong>
+                <h4>New vs Recurring</h4>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-3">
+                <div class="w-3 mx-auto">
+                  <canvas
+                    class="ex-graph"
+                    width="200" height="200"
+                    data-chart="doughnut"
+                    data-dataset="[100,260]"
+                    data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                    data-labels="['Referrals', 'Direct']">
+                  </canvas>
+                </div>
+                <strong class="text-muted">Business Partnerships</strong>
+                <h4>Direct vs Referrals</h4>
+              </div>
+            </div>
+            <!-- Stat cards -->
+            <div class="hr-divider mt-5 mb-3">
+              <h3 class="hr-divider-content hr-divider-heading">Quick stats</h3>
+            </div>
+
+            <div class="row statcards">
+              <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+                <div class="statcard statcard-success">
+                  <div class="p-3">
+                    <span class="statcard-desc">QR SCans</span>
+                    <h2 class="statcard-number">
+                      1,293
+                      <small class="delta-indicator delta-positive">5%</small>
+                    </h2>
+                    <hr class="statcard-hr mb-0">
+                  </div>
+                  <canvas id="sparkline1" width="378" height="94" class="sparkline"
+                    data-chart="spark-line"
+                    data-dataset="[[28,68,41,43,96,45,100]]"
+                    data-labels="['a','b','c','d','e','f','g']"
+                    style="width: 189px; height: 47px;">
+                  </canvas>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+                <!-- Inventory Cost Example -->
+                <div class="statcard statcard-danger">
+                  <div class="p-3">
+                    <span class="statcard-desc">Business Visits</span>
+                    <h2 class="statcard-number">
+                      1,293
+                      <small class="delta-indicator delta-positive">6.75%</small>
+                    </h2>
+                    <hr class="statcard-hr mb-0">
+                  </div>
+                  <canvas id="sparkline1" width="378" height="94" class="sparkline"
+                    data-chart="spark-line"
+                    data-dataset="[[4,34,64,27,96,50,80]]"
+                    data-labels="['a', 'b','c','d','e','f','g']"
+                    style="width: 189px; height: 47px;"></canvas>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+                <div class="statcard statcard-info">
+                  <div class="p-3">
+                    <span class="statcard-desc">Sign-ups</span>
+                    <h2 class="statcard-number">
+                      1,293
+                      <small class="delta-indicator delta-positive">6.75%</small>
+                    </h2>
+                    <hr class="statcard-hr mb-0">
+                  </div>
+                  <canvas id="sparkline1" width="378" height="94" class="sparkline"
+                    data-chart="spark-line"
+                    data-dataset="[[12,38,32,60,36,54,68]]"
+                    data-labels="['a', 'b','c','d','e','f','g']"
+                    style="width: 189px; height: 47px;"></canvas>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+                <div class="statcard statcard-warning">
+                  <div class="p-3">
+                    <span class="statcard-desc">Downloads</span>
+                    <h2 class="statcard-number">
+                      758
+                      <small class="delta-indicator delta-negative">1.3%</small>
+                    </h2>
+                    <hr class="statcard-hr mb-0">
+                  </div>
+                  <canvas id="sparkline1" width="378" height="94" class="sparkline"
+                    data-chart="spark-line"
+                    data-dataset="[[43,48,52,58,50,95,100]]"
+                    data-labels="['a', 'b','c','d','e','f','g']"
+                    style="width: 189px; height: 47px;"></canvas>
+                </div>
+              </div>
+            </div>
+            <hr class="mt-5">
+
+            <div class="row">
+              <div class="col-md-6 mb-5">
+                <div class="list-group mb-3">
+                  <h6 class="list-group-header">
+                    States
+                  </h6>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 62.4%;"></span>
+                      West Virginia
+                      <span class="ml-a text-muted">62.4%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 15.0%;"></span>
+                      Ohio
+                      <span class="ml-a text-muted">15.0%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 5.0%;"></span>
+                      Maryland
+                      <span class="ml-a text-muted">5.0%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 5.0%;"></span>
+                      Virginia
+                      <span class="ml-a text-muted">5.0%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 4.5%;"></span>
+                      Kentucky
+                      <span class="ml-a text-muted">4.5%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 2.3%;"></span>
+                      Tennessee
+                      <span class="ml-a text-muted">2.3%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 1.7%;"></span>
+                      Pennsylvania
+                      <span class="ml-a text-muted">1.7%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 1.5%;"></span>
+                      North Carolina
+                      <span class="ml-a text-muted">1.5%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 1.4%;"></span>
+                      South Carolina
+                      <span class="ml-a text-muted">1.4%</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span class="list-group-progress" style="width: 1.2%;"></span>
+                      California
+                      <span class="ml-a text-muted">1.2%</span>
+                    </a>
+                  
+                </div>
+                
+              </div>
+              <div class="col-md-6 mb-5">
+                <div class="list-group mb-3">
+                  <h6 class="list-group-header">
+                    Most visited pages
+                  </h6>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/ (Logged out)</span>
+                      <span class="mr-a text-muted">3,929,481</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/ (Logged in)</span>
+                      <span class="mr-a text-muted">1,143,393</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/Business Tour</span>
+                      <span class="mr-a text-muted">938,287</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/Fall Fest/Foodland</span>
+                      <span class="mr-a text-muted">749,393</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/Fall Fest/FCB</span>
+                      <span class="mr-a text-muted">695,912</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/Potato Fest/Court House</span>
+                      <span class="mr-a text-muted">501,938</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/Potato Fest/Armory</span>
+                      <span class="mr-a text-muted">392,842</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/CVB/Kiser Music</span>
+                      <span class="mr-a text-muted">298,183</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/CVB/Armory</span>
+                      <span class="mr-a text-muted">193,129</span>
+                    </a>
+                  
+                    <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                      <span>/CVB/Maloney's</span>
+                      <span class="mr-a text-muted">93,382</span>
+                    </a>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <!--End Body Box-->
+          </div>
+            
+
+        </div>
+        
+      
+    </div>
+  
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/sweetalert.min.js"></script> 
+<script src="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.13/fh-3.1.2/datatables.min.js"></script>
+
+<script type="text/javascript">
+    // "DT_RowId" will be used for row id
+    $(document).ready(function() {
+		$('#delete-close, #cancel-delete').on('click', function() {
+			location.reload();
+		})
+		
+        // Inside the ready function, lets call to fill the product types select menu
+        $.ajax({
+            url: "http://localhost:3000/api/products",
+            dataType: "json",
+            type: "GET",
+            data: {},
+            success: function (result) {
+				console.log(result);				
+		
+				if(result.data.products.length > 0) {
+					var totalPrice = 0;
+					
+					for (x=0; x<result.data.products.length; x++){
+						
+						var thisPrice = parseFloat(result.data.products[x].unit_price.replace(/[^0-9.]/g, ""));
+						console.log("this Price " + thisPrice);
+						totalPrice = totalPrice + thisPrice;
+						//console.log(result.data.products[x].unit_price);
+					}console.log(totalPrice);
+				}
+			
+                // vars for DataTable
+                var columns = [];
+
+                // We iterate through the array of records we get back from the database API call
+                // If you drill down in the console, you will find the array at result.data.products
+
+                // First, we build the columns array dynamically by examining the first record in the returned set.
+                if(result.data.products.length > 0) {
+
+                    var firstRecord = result.data.products[0];
+                  
+                    for(var key in firstRecord) {
+                      // We don't want id visible
+                      if(key == 'id' || key == 'id_type' || key == 'cost' || key == 'product_pic' || key == 'date_created' || key == 'qty_on_hand' || key == 'date_updated' || key == 'id_scent_type') {
+                        columns.push( { "title" : key, "data" : key, "visible": false } );
+                      } else { 
+                        // Push in the data
+                        columns.push( { "title" : key, "data" : key } );
+                      }
+                    }
+                }
+                // Push in our buttons as a final column
+               columns.push( {"defaultContent": "<button class=\"btn btn-default\"><i class=\"fa fa-arrow-up\"></i></button><button class=\"btn btn-delete\"><i class=\"fa fa-arrow-down\"></i></button>"} )
+
+                // Draw the table
+                var table = $('#data_table').DataTable( {
+                    "data" : result.data.products,
+                    "columns" : columns,
+                    columnDefs: [
+                      { width: '500px', targets: 0 }
+                    ],
+                    fixedColumns: true
+                } );  
+ 
+                $('#data_table tbody').on( 'click', 'button', function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    var buttonClass = $(this).attr("class");
+                    if(buttonClass == "btn btn-default") {
+                      // How would you hook this up?
+                      alert( "Update " + data.id );
+                    } else {
+                      $('#delete-modal').modal('show'); 
+                    }
+                    
+                } );
+
+            } // End success
+        }); // End ajax
+
+    } );
+</script>

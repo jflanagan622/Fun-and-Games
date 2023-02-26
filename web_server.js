@@ -40,7 +40,7 @@ app.listen(app.get('port'), function(){
 
 // Default page
 app.get('/', function(req,res) {
-	res.render('test');
+	res.render('login');
 });
 
 app.get('/test', function(req,res) {
@@ -77,8 +77,8 @@ app.get("/cart", function (req, res) {
 });
 
 // Cart Page
-app.get("/shop", function (req, res) {
-	res.render('shop', {layout: 'adminmain'});
+app.get("/seeker-bt", function (req, res) {
+	res.render('businesstour', {layout: 'adminmain'});
 });
 
 // Checkout Page
