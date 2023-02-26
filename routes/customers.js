@@ -109,7 +109,7 @@ exports.readCustomer = function(req, res) {
 
 		if(req.params.id) {
 			// Setup the query		
-			var query = 'SELECT id, first_name, last_name, email FROM customers WHERE id = $1';
+			var query = 'SELECT PlayerFirstName, PlayerLastName, Email FROM Players WHERE PlayerFirstName = $1';
 			client.query(query, [req.params.id], function (err, result) {
 				// handle an error from the query
 				if(handleError(err)) return;

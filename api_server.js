@@ -33,7 +33,7 @@ app.use(cors());
 // Postgres
 // =============================================================================
 var config = {
-  user: 'appuser', 				          // env var: PGUSER
+  user: 'postgres', 				          // env var: PGUSER
   database: 'Seeker Business Tour', 	// env var: PGDATABASE
   password: 'Seeker2023!', 			  // env var: PGPASSWORD
   host: 'localhost', 				        // Server hosting the postgres database
@@ -74,7 +74,7 @@ var customers = require('./routes/customers');
 app.post('/api/customer', customers.createCustomer);
 
 // Get specific customer
-app.get('/api/customer/:id', customers.readCustomer);
+app.get('/api/Players', customers.readCustomer);
 
 // Update
 app.put('/api/customer', customers.updateCustomer);

@@ -40,9 +40,15 @@ app.listen(app.get('port'), function(){
 
 // Default page
 app.get('/', function(req,res) {
-	res.render('home');
+	res.render('test');
 });
-app.get('/homepretty', function(req,res) {
+
+app.get('/test', function(req,res) {
+	// Send the construction page
+	res.render('test');
+});
+
+app.get('/pretty', function(req,res) {
 	// Send the construction page
 	res.render('homepretty');
 });
