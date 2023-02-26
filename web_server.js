@@ -43,20 +43,17 @@ app.get('/', function(req,res) {
 	res.render('login');
 });
 
-app.get('/test', function(req,res) {
-	// Send the construction page
-	res.render('test');
-});
+
 
 app.get('/pretty', function(req,res) {
 	// Send the construction page
 	res.render('homepretty');
 });
 
-// Construction
-app.get('/construction', function(req,res) {
+// Home
+app.get('/home', function(req,res) {
 	// Send the construction page
-	res.render('construction');
+	res.render('home');
 });
 
 // Stub of signup page

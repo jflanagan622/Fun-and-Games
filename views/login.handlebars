@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="images/avatar_2x.png" />
+        <img id="profile-img" class="profile-img-card" src="images/ridgeline.png" />
         <p id="profile-name" class="profile-name-card"></p>
 
         <form class="form-signin" action="#" method="post">
@@ -13,7 +13,7 @@
             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
             <input type="password" id="password" name="password" class="form-control" placeholder="password" required>
             
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+            <button id="login-button" class="btn btn-lg btn-primary btn-block">Login</button>
             
         </form><!-- /form -->
 
@@ -31,7 +31,7 @@
 
 <br></br>
 
-<center>
+<!--<center>
     <div>
         <button>
 <a href="/seeker-bt" style="color: black; text-decoration: none">Home Page</a>
@@ -39,13 +39,8 @@
     </div>
 </center>
 
-<br></br>
+<br></br>-->
 
-<center>
-<a href="/admin"><img src="../assets/web/images/infin.png" alt=""style="width:40px;height:40px;"hspace="20">
-              </img>
-          </a>
-</center>
 
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
@@ -57,11 +52,14 @@ $( document ).ready(function() {
 
     // Remove any leftovers
     Cookies.remove('richwood-scentific-temp');
+    document.getElementById("login-button").onclick = function () {
+        location.href = "/seeker-bt";
+        //console.log("Button Clicked")
+    };
+    /*$("form").submit(function() { 
 
-    $("form").submit(function() { 
-
-        event.preventDefault(); 
-
+        
+        
         var val = $("input[type=submit][clicked=true]").val();
         var password = $('input[name="password"]').val();
         var email = $('input[name="email"]').val();
@@ -90,7 +88,7 @@ $( document ).ready(function() {
             }  
         });
 
-    });
+    });*/
        
 });
     
