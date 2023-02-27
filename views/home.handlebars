@@ -3,24 +3,24 @@
       <div class="navigation-left">
           
           
-          <form method="get" action="/shop">
+         <!-- <form method="get" action="/shop">
         <button class="login-btn">Shop Products</button>
-          </form>
+          </form>-->
         
        <!-- there was 3 prod# code line 120 <a href="#" id="prod3"></a>-->
-      </div> <!--End class "navigation-left"-->
+      </div> <!--End class "navigation-left"
       <div class="navigation-center">
         <img src="../assets/web/images/logo.png" alt="Richwood-scentific">
-      </div> <!--End class "navigation-center"-->
+      </div> <!--End class "navigation-center"
       <div class="navigation-right">
         <a href="/cart" + result.data.id_customer><img src="../assets/web/images/shopping-bag.png" alt=""></a> 
         
-        <form method="get" action="/login">
+        <!--<form method="get" action="/login">
         <button class="login-btn">Login</button>
-          </form>
+          </form>-->
           
           
-          <a href="/admin"><img src="../assets/web/images/infin.png" alt=""style="width:40px;height:40px;"hspace="20"></a>
+          <!--<a href="/admin"><img src="../assets/web/images/infin.png" alt=""style="width:40px;height:40px;"hspace="20"></a>-->
                                                                                                 
       </div> <!--End class "navigation-right"-->
     </div> <!--End class "navigation"-->
@@ -42,11 +42,11 @@
 
       <!-- Slider #1 -->
       <div class="slider slide-1">
-        <img src="../assets/web/images/products/erasers.png" alt="">
+        <img src="../assets/web/images/city-map-image.jpg" alt="">
         <div class="slider-content">
-          <h4>-</h4>
-          <h2>Geddes Mash Ups Scented Kneaded Erasers</h2>
-          <button type="button" class="buy-now-btn" name="button" id=".">$22.56</button>
+          <!--<h4>-</h4>-->
+          <h2>Seeker Business Tour</h2>
+          <button type="button" class="buy-now-btn" name="button" id=".">Learn More</button>
         </div>
         <div class="number-pagination">
           <span>1</span>
@@ -55,11 +55,11 @@
 
       <!-- Slider #2 -->
       <div class="slider slide-2">
-        <img src="../assets/web/images/model-2.png" alt="">
+        <img src="../assets/web/images/kiosk-demo.jfif" alt="">
         <div class="slider-content">
-          <h4>New Product</h4>
-          <h2>Denim Longline T-Shirt Dress With Split</h2>
-          <button type="button" class="buy-now-btn" name="button" id=".">$130</button>
+          <h4>Coming Soon</h4>
+          <h2>Mixed Reality Kiosk Games</h2>
+          <button type="button" class="buy-now-btn" name="button" id=".">Learn More</button>
         </div>
         <div class="number-pagination">
           <span>2</span>
@@ -68,11 +68,11 @@
 
       <!-- Slider #3 -->
       <div class="slider slide-3">
-        <img src="../assets/web/images/model-3.png" alt="">
+        <img src="../assets/web/images/escape-demo.jfif" alt="">
         <div class="slider-content">
-          <h4>New Product</h4>
-          <h2>Denim Longline T-Shirt Dress With Split</h2>
-          <button type="button" class="buy-now-btn" name="button" id=".">$130</button>
+          <h4>Coming Soon</h4>
+          <h2>Stand Alone Escape Kiosk Games</h2>
+          <button type="button" class="buy-now-btn" name="button" id=".">Learn More</button>
         </div>
         <div class="number-pagination">
           <span>3</span>
@@ -81,11 +81,11 @@
 
       <!-- Slider #4 -->
       <div class="slider slide-4">
-        <img src="../assets/web/images/model-4.png" alt="" max-width=300px height=auto>
+        <img src="../assets/web/images/ridgelineqr.png" alt="" max-width=300px height=auto>
         <div class="slider-content">
-          <h4>New Product</h4>
-          <h2>Denim Longline T-Shirt Dress With Split</h2>
-          <button type="button" class="buy-now-btn" name="button" id=".">$130</button>
+          <h4>Create Your Own</h4>
+          <h2>Host your own games for tourism</h2>
+          <button type="button" class="buy-now-btn" name="button" id=".">Learn More</button>
         </div>
         <div class="number-pagination">
           <span>4</span>
@@ -103,19 +103,19 @@ $( document ).ready(function() {
 
   var id_customer = Cookies.get('richwood-scentific');
 
-  if(id_customer /*|| or sign up customer*/) {
+  /*if(id_customer /*|| or sign up customer) {
     // Logged in, cookie already exists
      Cookies.set('richwood-scentific', id_customer);
     console.log("using customer id: " + id_customer);
-  } /* End if*/ else {// if we are not, make us a logged in customer
+  } /* End if else {// if we are not, make us a logged in customer
    // Register customer, create uuid, and make a cookie
    var id_customer = generateUUID();
     Cookies.set('richwood-scentific-temp', id_customer);
     console.log("registered new user, " + id_customer);
-  } // End else
+  } // End else*/
 
 
-  $.ajax({
+  /*$.ajax({
       url: "http://localhost:3000/api/product_types",
       dataType: "json",
       type: "GET",
@@ -170,11 +170,12 @@ $( document ).ready(function() {
             } // End did we get any products
 
         } // End success function
-    }); // End Ajax call.
+    }); // End Ajax call.*/
 
     $('.slider').on( 'click', 'button', function () {
+      window.location.href="/seeker-bt";
         //alert ($(this).closest("div").attr("class"));
-        $.ajax({
+        /*$.ajax({
               url: "http://localhost:3000/api/cart",
               dataType: "json",
               type: "POST",
@@ -188,7 +189,7 @@ $( document ).ready(function() {
                   console.log(result);
               } // End success
             
-          }); // End ajax call
+          }); // End ajax call*/
         
     }); // End slider.on('click')
     

@@ -10,11 +10,11 @@
 
             <span id="reauth-email" class="reauth-email"></span>
 
-            <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="password" name="password" class="form-control" placeholder="password" required>
+            <input style="text-align: center;" type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+            <input style="text-align: center;" type="password" id="password" name="password" class="form-control" placeholder="password" required>
             
-            <button id="login-button" class="btn btn-lg btn-primary btn-block">Login</button>
-            
+            <button id="login-button" class="btn btn-lg btn-primary btn-block btn-signin">Login</button>
+            <button id="signup-button" class="btn btn-lg btn-primary btn-block btn-signin">New User Sign Up</button>
         </form><!-- /form -->
 
     </div><!-- /card-container -->
@@ -22,9 +22,7 @@
 
 <center>
     <div>
-        <button>
-<a href="/signup" style="color: black; text-decoration: none">New User Sign Up</a>
-        </button>
+       
     </div>
 </center>
 
@@ -53,7 +51,11 @@ $( document ).ready(function() {
     // Remove any leftovers
     Cookies.remove('richwood-scentific-temp');
     document.getElementById("login-button").onclick = function () {
-        location.href = "/seeker-bt";
+        location.href = "/home";
+        //console.log("Button Clicked")
+    };
+    document.getElementById("signup-button").onclick = function () {
+        location.href = "/signup";
         //console.log("Button Clicked")
     };
     /*$("form").submit(function() { 

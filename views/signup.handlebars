@@ -10,14 +10,15 @@
 
             <span id="reauth-email" class="reauth-email"></span>
 
-            <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="password" name="password" class="form-control" placeholder="password" required>
-            <input type="text" id="FirstName" class="form-control" placeholder="First Name" required autofocus>
-            <input type="text" id="LastName" class="form-control" placeholder="Last Name" required>
-            <input type="text" id="City" class="form-control" placeholder="City" required autofocus>
-            <input type="text" id="State" class="form-control" placeholder="State" required>
+            <input style="text-align: center;" type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+            <input style="text-align: center;" type="password" id="password" name="password" class="form-control" placeholder="password" required>
+            <input style="text-align: center;" type="text" id="FirstName" class="form-control" placeholder="First Name" required autofocus>
+            <input style="text-align: center;" type="text" id="LastName" class="form-control" placeholder="Last Name" required>
+            <input style="text-align: center;" type="text" id="City" class="form-control" placeholder="City" required autofocus>
+            <input style="text-align: center;" type="text" id="State" class="form-control" placeholder="State" required>
             
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create</button>
+            <button id="signup-button" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Create</button>
+            <button id="signup-cancel" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cancel</button>
             
         </form><!-- /form -->
 
@@ -61,7 +62,14 @@ $( document ).ready(function() {
     console.log("Page is Ready!")
     // Remove any leftovers
     Cookies.remove('richwood-scentific-temp');
-
+    document.getElementById("signup-button").onclick = function () {
+        location.href = "/home";
+        //console.log("Button Clicked")
+    };
+     document.getElementById("signup-cancel").onclick = function () {
+        location.href = "/login";
+        //console.log("Button Clicked")
+    };
     
     $("form").submit(function() { 
 
