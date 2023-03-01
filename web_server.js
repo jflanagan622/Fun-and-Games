@@ -40,7 +40,7 @@ app.listen(app.get('port'), function(){
 
 // Default page
 app.get('/', function(req,res) {
-	res.render('login');
+	res.render('home');
 });
 
 

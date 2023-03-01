@@ -14,7 +14,7 @@
             <input style="text-align: center;" type="password" id="password" name="password" class="form-control" placeholder="password" required>
             
             <button id="login-button" class="btn btn-lg btn-primary btn-block btn-signin">Login</button>
-            <button id="signup-button" class="btn btn-lg btn-primary btn-block btn-signin">New User Sign Up</button>
+            <button id="login-cancel" class="btn btn-lg btn-primary btn-block btn-signin">Cancel</button>
         </form><!-- /form -->
 
     </div><!-- /card-container -->
@@ -51,11 +51,11 @@ $( document ).ready(function() {
     // Remove any leftovers
     Cookies.remove('richwood-scentific-temp');
     document.getElementById("login-button").onclick = function () {
-        location.href = "/home";
+        location.href = "/seeker-bt";
         //console.log("Button Clicked")
     };
-    document.getElementById("signup-button").onclick = function () {
-        location.href = "/signup";
+    document.getElementById("login-cancel").onclick = function () {
+        location.href = "/home";
         //console.log("Button Clicked")
     };
     /*$("form").submit(function() { 
