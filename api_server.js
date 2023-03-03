@@ -52,7 +52,6 @@ pool.on('error', function(error, client) {
   console.log('Pool received an error: ' + error)
 });
 
-
 //-----------------------------------------
 // Startup the server
 app.listen(app.get('port'), function(){
@@ -74,7 +73,7 @@ var customers = require('./routes/customers');
 app.post('/api/customer', customers.createCustomer);
 
 // Get specific customer
-app.get('/api/Players', customers.readCustomer);
+app.get('/api/players', customers.readCustomer);
 
 // Update
 app.put('/api/customer', customers.updateCustomer);
@@ -186,4 +185,6 @@ app.delete('/api/scent_type', scent_types.deleteScentType);
 app.use(function(req,res) {
 	res.status(404).json({result: 'not found', data:{}});
 });
+
+
 

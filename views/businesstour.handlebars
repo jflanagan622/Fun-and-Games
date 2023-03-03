@@ -358,79 +358,22 @@
 <script type="text/javascript">
     // "DT_RowId" will be used for row id
     $(document).ready(function() {
-		$('#delete-close, #cancel-delete').on('click', function() {
-			location.reload();
-		})
-		
-        // Inside the ready function, lets call to fill the product types select menu
-        $.ajax({
-            url: "http://localhost:3000/api/products",
-            dataType: "json",
-            type: "GET",
-            data: {},
-            success: function (result) {
-				console.log(result);				
-		
-				if(result.data.products.length > 0) {
-					var totalPrice = 0;
-					
-					for (x=0; x<result.data.products.length; x++){
-						
-						var thisPrice = parseFloat(result.data.products[x].unit_price.replace(/[^0-9.]/g, ""));
-						console.log("this Price " + thisPrice);
-						totalPrice = totalPrice + thisPrice;
-						//console.log(result.data.products[x].unit_price);
-					}console.log(totalPrice);
-				}
-			
-                // vars for DataTable
-                var columns = [];
+      $('#delete-close, #cancel-delete').on('click', function() {
+        location.reload();
+      });
 
-                // We iterate through the array of records we get back from the database API call
-                // If you drill down in the console, you will find the array at result.data.products
+      console.log("Document Ready");
 
-                // First, we build the columns array dynamically by examining the first record in the returned set.
-                if(result.data.products.length > 0) {
-
-                    var firstRecord = result.data.products[0];
-                  
-                    for(var key in firstRecord) {
-                      // We don't want id visible
-                      if(key == 'id' || key == 'id_type' || key == 'cost' || key == 'product_pic' || key == 'date_created' || key == 'qty_on_hand' || key == 'date_updated' || key == 'id_scent_type') {
-                        columns.push( { "title" : key, "data" : key, "visible": false } );
-                      } else { 
-                        // Push in the data
-                        columns.push( { "title" : key, "data" : key } );
-                      }
-                    }
-                }
-                // Push in our buttons as a final column
-               columns.push( {"defaultContent": "<button class=\"btn btn-default\"><i class=\"fa fa-arrow-up\"></i></button><button class=\"btn btn-delete\"><i class=\"fa fa-arrow-down\"></i></button>"} )
-
-                // Draw the table
-                var table = $('#data_table').DataTable( {
-                    "data" : result.data.products,
-                    "columns" : columns,
-                    columnDefs: [
-                      { width: '500px', targets: 0 }
-                    ],
-                    fixedColumns: true
-                } );  
- 
-                $('#data_table tbody').on( 'click', 'button', function () {
-                    var data = table.row( $(this).parents('tr') ).data();
-                    var buttonClass = $(this).attr("class");
-                    if(buttonClass == "btn btn-default") {
-                      // How would you hook this up?
-                      alert( "Update " + data.id );
-                    } else {
-                      $('#delete-modal').modal('show'); 
-                    }
-                    
-                } );
-
-            } // End success
-        }); // End ajax
+      // Inside the ready function, lets call to fill the product types select menu
+      $.ajax({
+          url: "http://localhost:3000/api/players",
+          dataType: "json",
+          type: "GET",
+          data: {},
+          success: function (result) {
+            console.log(result);				
+          } // End success
+      }); // End ajax
 
     } );
 </script>
