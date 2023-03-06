@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chucktee/rsi-class-server#readme",
   "dependencies": {
+    "ajax": "^0.0.4",
     "body-parser": "^1.17.1",
     "cors": "^2.8.3",
     "dateutil": "^0.1.0",
@@ -26,7 +27,7 @@
     "morgan": "^1.8.1",
     "password-hash-and-salt": "^0.1.4",
     "pg": "^6.4.2",
-    "pg-pool": "^1.6.0",
+    "pg-pool": "^1.8.0",
     "pg-query-stream": "^1.0.0",
     "uuid": "^3.0.1"
   },
