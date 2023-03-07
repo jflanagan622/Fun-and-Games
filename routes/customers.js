@@ -92,10 +92,11 @@ exports.createCustomer = function(req, res) {
 // Read a specific customer
 //
 exports.readCustomer = function(req, res) {
-	console.log("read customer called");
+	console.log("read customer called");//I GET TO HERE AND THIS IS AS FAR AS IT GOES
+	
 	// get a pg client from the connection pool
-	pool.connect(function(err, client, done) {
-		console.log("pool connected");
+	pool.connect(function(err, client, done) { //NOTHING HAPPENS WHEN I GET HERE<------------------
+		
     	var handleError = function(err) {
 			// no error occurred, continue with the request
 			if(!err) return false;
@@ -106,24 +107,21 @@ exports.readCustomer = function(req, res) {
     	
     	// handle an error from the connect
 		if(handleError(err)) return;
-		console.log("errors handled - none returned");
-		/*if(req.params.id) {*/
-			// Setup the query		
-			var query = 'SELECT * FROM Players';
-			client.query(query, function (err, result) {
-				console.log("client query called");
 
-				console.log(" query error", err);
+		if(req.params.id) {
+			// Setup the query		
+			var query = 'SELECT * FROM Players WHERE PlayerFirstName = $1';
+			client.query(query, [req.params.id], function (err, result) {
 				// handle an error from the query
 				if(handleError(err)) return;
 				done();
 				res.status(200).json({result: 'success', data:{ customer : result.rows }});
 			});
 						      	
-    	/*} else {
+    	} else {
 	    	done();
-	    	res.status(404).json({ result:'error', data:{ error:'id is required' } });
-    	}*/
+	    	res.status(400).json({ result:'error', data:{ error:'id is required' } });
+    	}
 
 	});
 };
