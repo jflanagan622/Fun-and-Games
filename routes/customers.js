@@ -92,7 +92,7 @@ exports.createCustomer = function(req, res) {
 // Read a specific customer
 //
 exports.readCustomer = function(req, res) {
-	console.log(" read customer called");
+	console.log("read customer called");
 	// get a pg client from the connection pool
 	pool.connect(function(err, client, done) {
 		console.log("pool connected");
